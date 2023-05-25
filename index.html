@@ -1,0 +1,117 @@
+<style>
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 30px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  overflow: hidden;
+  font-family: Rubiks, sans-serif;
+  height: 100vh;
+  padding: 20px;
+  background-color: #000;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  top: calc(50vh - 360px);
+  left: calc(50vw - 350px);
+}
+
+.flash {
+  animation: flash 1.5s linear infinite;
+  filter: blur(4x);
+}
+
+@keyframes flash {
+  0% {
+    opacity: 100%;
+    width: 500px;
+    height: 500px;
+  }
+  25% {
+    opacity: 0%;
+    width: 230px;
+    height: 620px;
+  }
+  50%{
+    opacity: 0%;
+    width: 800px;
+    height: 120px;
+  }
+  75%{
+    opacity: 0%;
+    width: 600px;
+    height: 300px;
+  }
+  100% {
+    opacity: 100%;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+</style>
+
+<html>
+ <head>
+    <title>Economics and Politics Exploration</title>
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div id="popup" class="modal" style="">
+      
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="content"></div>
+      </div>
+    </div>
+    
+  </body>
+</html>
